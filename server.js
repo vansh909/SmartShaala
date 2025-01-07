@@ -17,5 +17,5 @@ mongoose.connect(mongoURI, {
 
 
 app.listen(port, (err)=>{
-    console.log(`server is running on ${port}`);
+    console.log(`server is running on ${port}!`);
 })
