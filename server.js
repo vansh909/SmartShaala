@@ -3,9 +3,15 @@ const app = express();
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb+srv://smartshala31:password31@cluster0.hm7id.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; 
 
-const port = 3000;
+const adminRoutes = require('./routes/adminRoutes');
+
+
+
+const port = 3001;
 
 app.use(express.json());
+app.use('/admin', adminRoutes);
+
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
@@ -15,7 +21,7 @@ mongoose.connect(mongoURI, {
     .catch(err => console.error('MongoDB connection error:', err));
 
 
-Console.log("Smartshala");
+console.log("Smartshala");
 
 app.listen(port, (err)=>{
     console.log(`server is running on ${port}!`);
