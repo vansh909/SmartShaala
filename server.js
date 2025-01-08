@@ -15,6 +15,7 @@ mongoose.connect(mongoURI, {
     .catch(err => console.error('MongoDB connection error:', err));
 
 
+Console.log("Smartshala");
 
 app.listen(port, (err)=>{
     console.log(`server is running on ${port}!`);
