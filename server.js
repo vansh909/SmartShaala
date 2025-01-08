@@ -2,10 +2,12 @@ const express  = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const mongoURI = 'mongodb+srv://smartshala31:password31@cluster0.hm7id.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'; 
+const userRoutes = require('./routes/userRoutes');
 
 const port = 3000;
 
 app.use(express.json());
+app.use('/users', userRoutes);
 
 mongoose.connect(mongoURI, {
     useNewUrlParser: true,
